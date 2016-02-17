@@ -1,13 +1,290 @@
 @import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes but {
+    from {background-color: #aaaaaa;}
+    to {background-color: white;}
+}
+
+/* Standard syntax */
+@keyframes but {
+    from {background-color: #aaaaaa;}
+    to {background-color: white;}
+}
 
 
-h1 {
+
+body {
+	background-image: $bg;
+	background-attachment: fixed;
+	background-size: 100%;
+}
+
+div, ul, li, a, nav{
+	background: white;
+	text-align: center;
+	z-index: 999;
+
+	    -webkit-animation-name: but; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: but;
+    animation-duration: 4s;
+}
+
+header {
+	background: white;
+	text-align: center;
+	z-index: 999;
+}
+
+nav {
+
+	background-color: white;
+	width: 100%;
+	height: 59px;
+	position: fixed;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+	z-index: 999;
+	ul {
+    background-color: white;
+    height: 100%;
+	float: right;
+	padding-right: 15px;
+	font: 20px $font-title;
+		li {	
+		    float: left;
+		    height: 100%;
+			a {	
+			    display: block;
+			    padding: 8px;
+			    background-color: white;
+			}
+		}
+	}
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #aaaaaa;
+    border-radius: 7px;
+    color: white !important;
+
+}
+
+h1{
   font-size: 2.2rem;
   color: lighten($orange, 25);
 }
 
-.test {
-  font-size: 1.2rem;
-  color: $blue;
+#nav{
+	height: 90%;
+	width: 100%;
+	position:relative;
+	top:50%;
+	transform: translateY(-50%);
+	ul li a{
+		position:relative;
+		top:50%;
+		transform: translateY(-50%);
+	    display: block;
+	    color: #aaaaaa;
+	    text-align: center;
+	    padding: 10px;
+	    text-decoration: none;
+	    margin-left: 2px;
+	    margin-right: 2px;
+	}
+	ul li{
+
+	}
+	ul li:hover{
+
+	}
+	img{
+		position: relative;
+		height: 70%;
+		margin-left: 2.5%;
+		top:50%;
+		transform: translateY(-50%);
+		float: left;
+	}
 }
+
+#slider-div{
+	padding-top: 59px;
+	background-color: rgba(250,250,250,0);
+	height: 611px;
+	margin-bottom: 0px;
+	z-index: 1;
+	video{
+		z-index: 1;
+		height: 100%;
+	}
+}
+
+#resume-div{
+	z-index: 999;
+	height: 230px;
+	margin-bottom: 300px;
+}
+
+#multi-div{
+	margin-top:20px;
+	height: 230px;
+	.wrapper{
+		margin: auto;
+		padding-top: 30px;
+		width: 70%;
+		height: 180px;
+		.inline{
+			display: inline-block;
+			width: 30%;
+			height: 100%;
+			margin:0px 5px;
+			i{
+				color: #aaaaaa;
+				z-index: 1;
+			}
+			p{
+				margin-top: 50px;
+				font: 17px $font-title;
+				color:#aaaaaa;			
+			}
+		}
+	}
+}
+
+#activities-div{
+	height: 100px;
+	margin-bottom: 0px;
+}
+
+#video-div{
+	background-color: white;
+	width: 100%;
+	height: 550px;
+	margin: 50px auto;
+	margin-top: 0px;
+	margin-bottom: 300px !important;
+	box-shadow: 0 0 50px #ffffff;
+	position: relative;
+	z-index: 1;
+	#left{
+		left: 20%;
+		@include button;		
+	}
+	#left:hover{
+			cursor: pointer;
+	}
+	#right{
+		right: 20%;
+		@include button;
+	}
+	#right:hover{
+			cursor: pointer;
+	}	
+}
+
+#carousel{
+	margin: auto;
+	width: 900px;
+	height: 500px;
+	overflow: hidden;
+	ul{
+		margin-left: -900px;
+		width: 5000px;
+		height: 500px;
+		list-style: none;
+		li{
+			display: inline-block;
+			width: 900px !important;
+			height: 500px;
+			float: left;
+			img{
+				height: 500px;
+			}
+		}
+		li:hover{
+			cursor: pointer;
+		}
+	}
+}
+
+#contact-div{
+	margin-bottom:0px !important;
+	height: 300px;
+	background-color: white;
+}
+
+
+#buttons {
+    padding:0 0 5px 0;    
+    float:right;
+    a {
+	    display:block; 
+	    width:31px; 
+	    height:32px;
+	    text-indent:-999em;
+	    float:left;
+	    outline:0;
+	}
+}
+
+#mask {
+  position:absolute;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+#boxes{
+	width: 100%;
+	height: 100%;
+}
+
+#boxes .window {
+  position:fixed;
+  width:900px;
+  height:500px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+  top:50%;
+  transform: translate(-50%, -50%);
+  left:50%;  
+  img{
+  	height: 450px;
+  } 
+}
+/* Customize your modal window here, you can add background image too */
+#boxes #dialog {
+  width:900px; 
+  height:500px;
+}
+
+.title{
+	margin: 0px !important;
+	padding: 20px 0px;
+	height:50px;
+	font: 44px $font-title;
+	color:#aaaaaa;
+	text-align: center;
+	margin-bottom: 0px !important;
+}
+
+.text{
+	height: 50% !important;
+	width: 45%;
+	margin: auto;
+
+	p{
+		padding:5px 0px;
+		font: 20px $font-title;
+		color:#aaaaaa;
+	}
+}
+
+.clear {clear:both}
+
+
